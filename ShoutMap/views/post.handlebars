@@ -1,0 +1,37 @@
+<h1>{{author}}'s Post</h1>
+
+<p>Posted: {{date}}</p>
+
+<img src="{{picture}}" alt="Post Picture">
+
+<h2>{{caption}}</h2>
+
+<h3>Reactions</h3>
+<form id="reaction_form" action="/react" method="POST">
+<label for="likebutton">Like</label>
+<input id="likebutton" type="radio" name="reactions" value="like">
+<label for="lovebutton">Love</label>
+<input id="lovebutton" type="radio" name="reactions" value="love">
+<label for="happybutton">Happy</label>
+<input id="happybutton" type="radio" name="reactions" value="happy">
+<label for="funnybutton">Funny</label>
+<input id="funnybutton" type="radio" name="reactions" value="funny">
+<button type="submit">React</button>
+</form>
+
+</form>
+<h3>Add Comment</h3>
+<form action="/posts" method="POST" onsubmit="return validateComment()">
+  <textarea id="comment" name="comment" rows="4" cols="50"></textarea>
+  <span id="comment-counter"></span>
+  <input type="submit" value="Submit">
+</form>
+<div id="error-container"></div>
+
+<h3>Comments</h3>
+{{#each comments}}
+  <div class="comment">
+    <p>{{this}}</p>
+  </div>
+{{/each}}
+<script type="module" src="../public/js/comment.js"></script>

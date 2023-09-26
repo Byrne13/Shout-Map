@@ -1,0 +1,9 @@
+    <div class="welcome-section">
+        <h1>Welcome to ShoutMap!</h1>
+        <p>Find and share shoutouts on the map.</p>
+        {{#if isLoggedIn}}
+        <button onclick="location.href='/map'">Go to map</button>
+  {{else}}
+        <button onclick="location.href='/register'">Register Here!</button>
+  {{/if}}
+    </div>

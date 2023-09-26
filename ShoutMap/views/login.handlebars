@@ -1,0 +1,20 @@
+
+  <!-- Login form -->
+<form id="login-form" action="/login" method="post" onsubmit="return validateLogin()">
+ <h1>Login:</h1>
+ 
+  <label for="usernameInput">Username:</label>
+  <input type="text" id="usernameInput" name="username" required>
+
+  <label for="passwordInput">Password:</label>
+  <input type="password" id="passwordInput" name="password" required>
+
+  <button type="submit">Login</button>
+  <p><a href="/register">Click here to register!</a></p>
+</form>
+<div id="error-container"></div>
+{{#if isError}}
+    <p id="error-message">{{error}}</p>
+  {{/if}}
+
+

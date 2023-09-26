@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ShoutMap! - {{title}}</title>
+    <link rel="stylesheet" href="../../public/css/styles.css">
+    <!-- Import Pikaday CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+    <!-- Import Leaflet CSS map styles -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+        
+    <!-- Import Leaflet Javascript library -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+</head>
+
+<body>
+    <header class="navbar">
+  <a href="/">Home</a> 
+  <a href="/map">Map</a>
+  {{#if isLoggedIn}}
+    <a class="login-button" href="/profile">Profile</a>
+  {{else}}
+    <a class="login-button" href="/login">Login</a>
+  {{/if}}
+</header>
+
+
+    {{{body}}}
+<script src='../../public/js/validator.js'></script>
+</body>
+
+</html>

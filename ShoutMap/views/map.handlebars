@@ -1,0 +1,33 @@
+<!-- map.handlebars -->
+
+<!-- Import Pikaday JavaScript library -->
+<script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+<label for="datepicker">Date Picker</label>
+<input type="text" id="datepicker" readonly="readonly">
+<button id="get-posts-btn">Get Posts</button>
+<button id="get-Followerposts-btn">Get Follower Posts</button>
+<button id="get-location-btn">Get Current Location</button>
+<button id="writePost" onclick="window.location.href='./posts/makepost';">Make a Post</button>
+<form id="follow-form" action="/followuser" method="post">
+	<label for="followInput">Username to Follow:</label>
+	<input type="text" id="followInput" name="follow" required>
+ 	<button type="submit">Follow</button>
+</form>
+<form id="unfollow-form" action="/unfollowuser" method="post">
+	<label for="unfollowInput">Username to Unfollow:</label>
+	<input type="text" id="unfollowInput" name="unfollow" required>
+ 	<button type="submit">Unfollow</button>
+</form>
+{{#if isError}}
+    <p id="error-message">{{error}}</p>
+  {{/if}}
+{{#if successFollow}}
+    <p id="follow-message">{{msg}}</p>
+  {{/if}}
+<div id="map" style="width: 100%; height: 90vh"></div>
+
+<!-- loads map and button initialization code -->
+<script type="module" src="../public/js/client.js"></script>
+
+
+    

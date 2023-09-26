@@ -1,0 +1,23 @@
+  <!-- Post form -->
+<form id="post-form" action="/posts/makepost" method="post" onsubmit="return validatePost()">
+ <h2>Make a Post:</h2>
+  <label for="captionInput">Caption:</label>
+  <input type="text" id="captionInput" name="caption" required>
+  <span id="caption-counter"></span>
+
+  <label for="mediaInput">Image</label>
+  <input type="file" id="mediaInput" name="media" accept="image/*" class="local" required>
+
+  <input type="hidden" id="imageInput" name="image" value="">
+  <input type="hidden" id="locationInput" name="location" value="">
+  <input type="hidden" id="latitudeInput" name="latitude" value="">
+  <input type="hidden" id="longitudeInput" name="longitude" value="">
+
+  <button type="submit">Shout!</button>
+</form>
+<div id="error-container"></div>
+{{#if isError}}
+    <p id="error-message">{{error}}</p>
+  {{/if}}
+
+<script type="module" src="../public/js/caption.js"></script>
